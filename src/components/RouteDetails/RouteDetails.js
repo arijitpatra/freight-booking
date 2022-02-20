@@ -15,7 +15,7 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
     <>
       {stops.map((item, i) => {
         return (
-          <>
+          <div className="row">
             <div className="routes">
               <section key={item.company} className="company">
                 <div>{item.address}</div>
@@ -79,9 +79,40 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                   )}
                 </section>
               )}
+
+              {schedulingStrategy === "flexible" && (
+                <section className="dateTime">
+                  <LocalizationProvider dateAdapter={AdapterDateFns}>
+                    <DatePicker
+                      label={i === 0 ? "Pick up date" : "Arrival date"}
+                      value={value}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                    <TimePicker
+                      label="From"
+                      value={value}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                    <TimePicker
+                      label="To"
+                      value={value}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} />}
+                    />
+                  </LocalizationProvider>
+                </section>
+              )}
             </div>
             <div>{canAddCargo && <Cargo />}</div>
-          </>
+          </div>
         );
       })}
     </>
