@@ -27,6 +27,7 @@ function App() {
           Can add cargo
         </label>
       </div>
+      <h1>Route</h1>
       <RouteDetails
         stops={stops}
         schedulingStrategy={schedulingStrategy}
