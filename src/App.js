@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { RouteDetails } from "./components/RouteDetails";
+import { stops } from "./stops.js";
+import "./App.scss";
 
 function App() {
+  const [schedulingStrategy, setSchedulingStrategy] = useState("fixed");
+  const [canAddCargo, setCanAddCargo] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div>
+        <select
+          value={schedulingStrategy}
+          onChange={(e) => setSchedulingStrategy(e.target.value)}
         >
-          Learn React
-        </a>
-      </header>
+          <option value="fixed">Fixed</option>
+          <option value="semiFlexible">Semi flexible</option>
+          <option value="flexible">Flexible</option>
+        </select>
+        <label>
+          <input
+            type="checkbox"
+            checked={canAddCargo}
+            onChange={(e) => setCanAddCargo(e.target.checked)}
+          />
+          Can add cargo
+        </label>
+      </div>
+      <RouteDetails
+        stops={stops}
+        schedulingStrategy={schedulingStrategy}
+        canAddCargo={canAddCargo}
+      />
     </div>
   );
 }
