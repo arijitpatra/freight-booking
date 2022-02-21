@@ -26,31 +26,71 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                 </div>
               </section>
 
-              {schedulingStrategy === "fixed" && (
-                <section className="dateTime">
-                  {i === 0 ? (
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DatePicker
-                        label="Pick up date"
-                        value={value}
-                        onChange={(newValue) => {
-                          setValue(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-                  ) : (
-                    "Estimated Arrival : -"
-                  )}
-                </section>
-              )}
+              <div className="right">
+                {schedulingStrategy === "fixed" && (
+                  <section className="dateTime">
+                    {i === 0 ? (
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                          label="Pick up date"
+                          value={value}
+                          onChange={(newValue) => {
+                            setValue(newValue);
+                          }}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                      </LocalizationProvider>
+                    ) : (
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <div>Estimated Arrival</div>
+                        <div>-</div>
+                      </div>
+                    )}
+                  </section>
+                )}
 
-              {schedulingStrategy === "semiFlexible" && (
-                <section className="dateTime">
-                  {i === 0 ? (
+                {schedulingStrategy === "semiFlexible" && (
+                  <section className="dateTime">
+                    {i === 0 ? (
+                      <LocalizationProvider dateAdapter={AdapterDateFns}>
+                        <DatePicker
+                          label="Pick up date"
+                          value={value}
+                          onChange={(newValue) => {
+                            setValue(newValue);
+                          }}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                        <TimePicker
+                          label="From"
+                          value={value}
+                          onChange={(newValue) => {
+                            setValue(newValue);
+                          }}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                        <TimePicker
+                          label="To"
+                          value={value}
+                          onChange={(newValue) => {
+                            setValue(newValue);
+                          }}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                      </LocalizationProvider>
+                    ) : (
+                      <div style={{ display: "flex", flexDirection: "column" }}>
+                        <div>Estimated Arrival</div>
+                        <div>-</div>
+                      </div>
+                    )}
+                  </section>
+                )}
+                {schedulingStrategy === "flexible" && (
+                  <section className="dateTime">
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                       <DatePicker
-                        label="Pick up date"
+                        label={i === 0 ? "Pick up date" : "Arrival date"}
                         value={value}
                         onChange={(newValue) => {
                           setValue(newValue);
@@ -74,42 +114,10 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                         renderInput={(params) => <TextField {...params} />}
                       />
                     </LocalizationProvider>
-                  ) : (
-                    "Estimated Arrival : -"
-                  )}
-                </section>
-              )}
-
-              {schedulingStrategy === "flexible" && (
-                <section className="dateTime">
-                  <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <DatePicker
-                      label={i === 0 ? "Pick up date" : "Arrival date"}
-                      value={value}
-                      onChange={(newValue) => {
-                        setValue(newValue);
-                      }}
-                      renderInput={(params) => <TextField {...params} />}
-                    />
-                    <TimePicker
-                      label="From"
-                      value={value}
-                      onChange={(newValue) => {
-                        setValue(newValue);
-                      }}
-                      renderInput={(params) => <TextField {...params} />}
-                    />
-                    <TimePicker
-                      label="To"
-                      value={value}
-                      onChange={(newValue) => {
-                        setValue(newValue);
-                      }}
-                      renderInput={(params) => <TextField {...params} />}
-                    />
-                  </LocalizationProvider>
-                </section>
-              )}
+                  </section>
+                )}
+                <section>+Gate Reference</section>
+              </div>
             </div>
             <div>{canAddCargo && <Cargo />}</div>
           </div>
