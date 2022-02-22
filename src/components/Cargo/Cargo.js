@@ -30,97 +30,141 @@ export const Cargo = () => {
         <div>
           <h4>Cargo item</h4>
           <div>
-            <Box sx={{ width: "50ch" }}>
-              <InputLabel id="demo-simple-select-label">
-                Unloading stop
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={age}
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>10 Miles</MenuItem>
-                <MenuItem value={20}>20 Miles</MenuItem>
-                <MenuItem value={30}>30 Miles</MenuItem>
-              </Select>
-            </Box>
+            <Stack
+              spacing={2}
+              direction="row"
+              style={{ justifyContent: "end", marginTop: "1rem" }}
+            >
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label">
+                  Unloading stop
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  onChange={handleChange}
+                  style={{ width: "100%" }}
+                >
+                  <MenuItem value={10}>10 Miles</MenuItem>
+                  <MenuItem value={20}>20 Miles</MenuItem>
+                  <MenuItem value={30}>30 Miles</MenuItem>
+                </Select>
+              </Box>
 
-            <Box sx={{ width: "50ch" }}>
-              <InputLabel id="demo-simple-select-label2">Type</InputLabel>
-              <Select
-                labelId="demo-simple-select-label2"
-                id="demo-simple-select2"
-                value={age}
-                onChange={handleChange}
-              >
-                <MenuItem value={10}>10 Miles</MenuItem>
-                <MenuItem value={20}>20 Miles</MenuItem>
-                <MenuItem value={30}>30 Miles</MenuItem>
-              </Select>
-            </Box>
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label2">Type</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label2"
+                  id="demo-simple-select2"
+                  value={age}
+                  onChange={handleChange}
+                  style={{ width: "100%" }}
+                >
+                  <MenuItem value={10}>10 Miles</MenuItem>
+                  <MenuItem value={20}>20 Miles</MenuItem>
+                  <MenuItem value={30}>30 Miles</MenuItem>
+                </Select>
+              </Box>
 
-            <InputLabel id="demo-simple-select-label3">PO Number</InputLabel>
-            <TextField id="outlined-basic" variant="outlined" />
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label3">
+                  PO Number
+                </InputLabel>
+                <TextField
+                  id="outlined-basic"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                />
+              </Box>
+            </Stack>
 
-            <InputLabel id="demo-simple-select-label3">Quantity</InputLabel>
-            <TextField hiddenLabel id="outlined-basic" variant="outlined" />
+            <Stack
+              spacing={2}
+              direction="row"
+              style={{ justifyContent: "end", marginTop: "1rem" }}
+            >
+              <Box>
+                <InputLabel id="demo-simple-select-label3">Quantity</InputLabel>
+                <TextField hiddenLabel id="outlined-basic" variant="outlined" />
+              </Box>
 
-            <InputLabel id="demo-simple-select-label3">Total Weight</InputLabel>
-            <TextField id="outlined-basic" variant="outlined" />
+              <Box>
+                <InputLabel id="demo-simple-select-label3">
+                  Total Weight
+                </InputLabel>
+                <TextField id="outlined-basic" variant="outlined" />
+              </Box>
 
-            <InputLabel id="demo-simple-select-label5">Weight</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-weight"
-              value={1}
-              // onChange={handleChange("weight")}
-              onChange={() => {}}
-              endAdornment={<InputAdornment position="end">kg</InputAdornment>}
-              aria-describedby="outlined-weight-helper-text"
-              inputProps={{
-                "aria-label": "weight",
-              }}
-            />
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label5">Weight</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-weight"
+                  value={1}
+                  // onChange={handleChange("weight")}
+                  onChange={() => {}}
+                  endAdornment={
+                    <InputAdornment position="end">kg</InputAdornment>
+                  }
+                  aria-describedby="outlined-weight-helper-text"
+                  inputProps={{
+                    "aria-label": "weight",
+                  }}
+                />
+              </Box>
 
-            <InputLabel id="demo-simple-select-label6">Length</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-length"
-              value={1}
-              // onChange={handleChange("weight")}
-              onChange={() => {}}
-              endAdornment={<InputAdornment position="end">cm</InputAdornment>}
-              aria-describedby="outlined-length-helper-text"
-              inputProps={{
-                "aria-label": "length",
-              }}
-            />
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label6">Length</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-length"
+                  value={1}
+                  // onChange={handleChange("weight")}
+                  onChange={() => {}}
+                  endAdornment={
+                    <InputAdornment position="end">cm</InputAdornment>
+                  }
+                  aria-describedby="outlined-length-helper-text"
+                  inputProps={{
+                    "aria-label": "length",
+                  }}
+                />
+              </Box>
 
-            <InputLabel id="demo-simple-select-label7">Width</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-width"
-              value={1}
-              // onChange={handleChange("weight")}
-              onChange={() => {}}
-              endAdornment={<InputAdornment position="end">cm</InputAdornment>}
-              aria-describedby="outlined-width-helper-text"
-              inputProps={{
-                "aria-label": "width",
-              }}
-            />
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label7">Width</InputLabel>
+                <OutlinedInput
+                  id="outlined-adornment-width"
+                  value={1}
+                  // onChange={handleChange("weight")}
+                  onChange={() => {}}
+                  endAdornment={
+                    <InputAdornment position="end">cm</InputAdornment>
+                  }
+                  aria-describedby="outlined-width-helper-text"
+                  inputProps={{
+                    "aria-label": "width",
+                  }}
+                />
+              </Box>
 
-            <InputLabel id="demo-simple-select-label7">Height</InputLabel>
-            <OutlinedInput
-              hiddenLabel
-              id="outlined-adornment-height"
-              value={1}
-              // onChange={handleChange("weight")}
-              onChange={() => {}}
-              endAdornment={<InputAdornment position="end">cm</InputAdornment>}
-              aria-describedby="outlined-height-helper-text"
-              inputProps={{
-                "aria-label": "height",
-              }}
-            />
+              <Box sx={{ width: "50ch" }}>
+                <InputLabel id="demo-simple-select-label7">Height</InputLabel>
+                <OutlinedInput
+                  hiddenLabel
+                  id="outlined-adornment-height"
+                  value={1}
+                  // onChange={handleChange("weight")}
+                  onChange={() => {}}
+                  endAdornment={
+                    <InputAdornment position="end">cm</InputAdornment>
+                  }
+                  aria-describedby="outlined-height-helper-text"
+                  inputProps={{
+                    "aria-label": "height",
+                  }}
+                />
+              </Box>
+            </Stack>
           </div>
 
           <Stack
