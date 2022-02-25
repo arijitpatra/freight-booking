@@ -10,6 +10,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormHelperText from "@mui/material/FormHelperText";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import "./Cargo.scss";
 
 export const Cargo = () => {
   const [toggle, setToggle] = useState(false);
@@ -25,7 +26,14 @@ export const Cargo = () => {
 
   return (
     <>
-      {!toggle && <h4 onClick={handleToggle}>+ Add Cargo</h4>}
+      {!toggle && (
+        <h4
+          onClick={handleToggle}
+          className="text-orange fw-600 cursor-pointer"
+        >
+          + Add Cargo
+        </h4>
+      )}
       {toggle && (
         <div>
           <h4>Cargo item</h4>
@@ -89,15 +97,13 @@ export const Cargo = () => {
                 <TextField hiddenLabel id="outlined-basic" variant="outlined" />
               </Box>
 
-              <Box>
-                <InputLabel id="demo-simple-select-label3">
+              <Box
+                sx={{ width: "50ch" }}
+                style={{ borderRight: "1px solid #c4c4c4" }}
+              >
+                <InputLabel id="demo-simple-select-label5">
                   Total Weight
                 </InputLabel>
-                <TextField id="outlined-basic" variant="outlined" />
-              </Box>
-
-              <Box sx={{ width: "50ch" }}>
-                <InputLabel id="demo-simple-select-label5">Weight</InputLabel>
                 <OutlinedInput
                   id="outlined-adornment-weight"
                   value={1}

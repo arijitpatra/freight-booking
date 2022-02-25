@@ -1,0 +1,20 @@
+.locationMarker {
+  width: 35px;
+  height: 35px;
+  border-radius: 50% 50% 50% 0;
+  background: #89849b;
+  transform: rotate(-45deg);
+  margin: 1rem;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  &-text {
+    transform: rotate(45deg);
+    position: absolute;
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+  }
+}
