@@ -1,1 +1,1 @@
-export * from "./Cargo";
+export { Cargo as default } from "./Cargo";

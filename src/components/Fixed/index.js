@@ -1,1 +1,1 @@
-export * from "./Fixed";
+export { Fixed as default } from "./Fixed";

@@ -1,1 +1,1 @@
-export * from "./Flexible";
+export { Flexible as default } from "./Flexible";

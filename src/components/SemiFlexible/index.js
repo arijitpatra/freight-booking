@@ -1,1 +1,1 @@
-export * from "./SemiFlexible";
+export { SemiFlexible as default } from "./SemiFlexible";

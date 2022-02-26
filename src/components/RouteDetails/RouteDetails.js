@@ -1,11 +1,15 @@
+import { lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import "./RouteDetails.scss";
-import { Cargo } from "../Cargo";
 import { LocationMarker } from "../LocationMarker";
-import { Fixed } from "../Fixed";
-import { SemiFlexible } from "../SemiFlexible";
-import { Flexible } from "../Flexible";
 import { DestinationDetails } from "../DestinationDetails";
+import CircularProgress from "@mui/material/CircularProgress";
+
+// dynamic import for lazy loading
+const Cargo = lazy(() => import("../Cargo"));
+const Fixed = lazy(() => import("../Fixed"));
+const SemiFlexible = lazy(() => import("../SemiFlexible"));
+const Flexible = lazy(() => import("../Flexible"));
 
 export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   return (
@@ -23,20 +27,30 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
               <DestinationDetails destination={item} />
 
               <div className="right">
-                {schedulingStrategy === "fixed" && <Fixed index={i} />}
+                <Suspense fallback={<CircularProgress color="inherit" />}>
+                  {schedulingStrategy === "fixed" && <Fixed index={i} />}
 
-                {schedulingStrategy === "semiFlexible" && (
-                  <SemiFlexible index={i} />
-                )}
+                  {schedulingStrategy === "semiFlexible" && (
+                    <SemiFlexible index={i} />
+                  )}
 
-                {schedulingStrategy === "flexible" && <Flexible />}
+                  {schedulingStrategy === "flexible" && <Flexible />}
+                </Suspense>
 
                 <h4 className="text-orange m-t-1r cursor-not-allowed">
                   + <span className="underline">Gate Reference</span>
                 </h4>
               </div>
             </div>
-            <div>{canAddCargo && <Cargo />}</div>
+            <div>
+              <Suspense
+                fallback={
+                  <CircularProgress color="inherit" className="m-l-65" />
+                }
+              >
+                {canAddCargo && <Cargo />}
+              </Suspense>
+            </div>
           </div>
         );
       })}

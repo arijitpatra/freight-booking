@@ -15,7 +15,7 @@ export const Cargo = () => {
 
   return (
     <>
-      <div style={{ marginLeft: "65px" }}>
+      <div className="m-l-65">
         {!toggle && (
           <h4 onClick={handleToggle} className="text-orange cursor-pointer">
             + <span className="underline">Add Cargo</span>
