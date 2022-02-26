@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <div className="d-f a-c j-sb header">
         <h1>Route</h1>
+
         <section className="d-f a-c">
           <select
             value={schedulingStrategy}
@@ -20,6 +21,7 @@ function App() {
             <option value="semiFlexible">Semi flexible</option>
             <option value="flexible">Flexible</option>
           </select>
+
           <label>
             <input
               type="checkbox"

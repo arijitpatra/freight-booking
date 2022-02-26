@@ -49,6 +49,44 @@ export const times = [
   "23:30",
 ];
 
+export const unloadingStops = [
+  {
+    value: "gcr",
+    label: "Garden City Road",
+  },
+  {
+    value: "mgr",
+    label: "MG Road",
+  },
+  {
+    value: "tdt",
+    label: "10 Down Town",
+  },
+  {
+    value: "hfi",
+    label: "Hotel Freight Inn",
+  },
+  {
+    value: "fyr",
+    label: "Ferry Road",
+  },
+];
+
+export const cargoTypes = [
+  {
+    value: "air",
+    label: "Air",
+  },
+  {
+    value: "rod",
+    label: "Road",
+  },
+  {
+    value: "sea",
+    label: "Sea",
+  },
+];
+
 export const formatTime = (item) => {
   item = item.toString();
   if (item.length === 3) {
