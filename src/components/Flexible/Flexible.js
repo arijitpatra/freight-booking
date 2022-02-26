@@ -6,13 +6,9 @@ import { TimePickerComponent } from "../TimePickerComponent";
 export const Flexible = () => {
   return (
     <section className="dateTime">
-      <Stack
-        spacing={4}
-        direction="row"
-        style={{ justifyContent: "end", marginTop: "1rem" }}
-      >
+      <Stack spacing={4} direction="row">
         <Box sx={{ width: "100%" }}>
-          <DatePickerComponent />
+          <DatePickerComponent label="Pick up date" />
         </Box>
 
         <Box sx={{ width: "100%" }}>

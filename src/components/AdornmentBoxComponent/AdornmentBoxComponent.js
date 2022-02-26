@@ -28,7 +28,7 @@ export const AdornmentBoxComponent = ({
         inputProps={{
           "aria-label": label,
         }}
-        style={{ width: "100%" }}
+        className="w-100"
         type={type}
       />
     </>

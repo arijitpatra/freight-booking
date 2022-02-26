@@ -16,7 +16,7 @@ export const TextBoxComponent = ({ label, type = "number" }) => {
         val={value}
         id={label}
         variant="outlined"
-        style={{ width: "100%" }}
+        className="w-100"
         onChange={handleChange}
         type={type}
       />

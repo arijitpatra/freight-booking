@@ -5,22 +5,25 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 
-export const DatePickerComponent = () => {
-  const [pickUpDate, setPickUpDate] = useState(null);
+export const DatePickerComponent = ({ label }) => {
+  const today = new Date();
+  const [value, setValue] = useState(null);
 
-  const handlePickUpDateChange = (data) => {
-    setPickUpDate(data);
+  const handleChange = (data) => {
+    setValue(data);
   };
+
   return (
     <>
-      <InputLabel id="pick-up-date-label">Pick up date</InputLabel>
+      <InputLabel id="pick-up-date-label">{label}</InputLabel>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
-          id="pick-up-date"
+          id={label}
           inputFormat="dd/MM/yy"
           mask="__/__/__"
-          value={pickUpDate}
-          onChange={(data) => handlePickUpDateChange(data)}
+          minDate={today}
+          value={value}
+          onChange={(data) => handleChange(data)}
           renderInput={(params) => <TextField {...params} className="w-100" />}
         />
       </LocalizationProvider>

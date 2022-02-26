@@ -58,6 +58,10 @@ code {
   margin-top: 1rem;
 }
 
+.m-t-2r {
+  margin-top: 2rem;
+}
+
 .m-l-65 {
   margin-left: 65px;
 }
@@ -79,12 +83,20 @@ code {
   justify-content: center;
 }
 
+.j-e {
+  justify-content: end;
+}
+
 .a-c {
   align-items: center;
 }
 
 .j-sb {
   justify-content: space-between;
+}
+
+.fd-c {
+  flex-direction: column;
 }
 
 .underline {

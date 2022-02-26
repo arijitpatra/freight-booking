@@ -9,13 +9,9 @@ export const SemiFlexible = ({ index }) => {
     <section className="dateTime">
       {index === 0 ? (
         <>
-          <Stack
-            spacing={4}
-            direction="row"
-            style={{ justifyContent: "end", marginTop: "1rem" }}
-          >
+          <Stack spacing={4} direction="row">
             <Box sx={{ width: "100%" }}>
-              <DatePickerComponent />
+              <DatePickerComponent label="Pick up date" />
             </Box>
 
             <Box sx={{ width: "100%" }}>

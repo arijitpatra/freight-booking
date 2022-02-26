@@ -22,7 +22,7 @@ export const TimePickerComponent = ({ label }) => {
         id="demo-simple-select"
         value={time}
         onChange={handleTimeChange}
-        style={{ width: "100%" }}
+        className="w-100"
         startAdornment={
           <InputAdornment position="start">{label}</InputAdornment>
         }

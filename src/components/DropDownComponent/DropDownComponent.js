@@ -16,7 +16,7 @@ export const DropDownComponent = ({ label, options }) => {
         id={label}
         value={value}
         onChange={handleChange}
-        style={{ width: "100%" }}
+        className="w-100"
       >
         {options.map((item) => {
           return (
