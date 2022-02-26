@@ -9,7 +9,7 @@ import { DestinationDetails } from "../DestinationDetails";
 
 export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   return (
-    <>
+    <div className="route-details">
       {stops.map((item, i) => {
         return (
           <div className="row" key={item.company + "row"}>
@@ -40,7 +40,7 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 
-export const TextBoxComponent = ({ label }) => {
+export const TextBoxComponent = ({ label, type = "number" }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
@@ -18,6 +18,7 @@ export const TextBoxComponent = ({ label }) => {
         variant="outlined"
         style={{ width: "100%" }}
         onChange={handleChange}
+        type={type}
       />
     </>
   );

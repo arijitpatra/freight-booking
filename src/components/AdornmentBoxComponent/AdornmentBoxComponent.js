@@ -3,7 +3,11 @@ import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 
-export const AdornmentBoxComponent = ({ label, adornmentText }) => {
+export const AdornmentBoxComponent = ({
+  label,
+  adornmentText,
+  type = "number",
+}) => {
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
@@ -25,6 +29,7 @@ export const AdornmentBoxComponent = ({ label, adornmentText }) => {
           "aria-label": label,
         }}
         style={{ width: "100%" }}
+        type={type}
       />
     </>
   );

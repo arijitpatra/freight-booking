@@ -1,19 +1,21 @@
-.company {
-  margin: 1rem 0;
-  flex: 1;
-}
+.route-details {
+  .company {
+    margin: 1rem 0;
+    flex: 1;
+  }
 
-.routes {
-  display: flex;
-  align-items: center;
-}
+  .routes {
+    display: flex;
+    align-items: center;
+  }
 
-.right {
-  flex: 2;
-}
+  .right {
+    flex: 2;
+  }
 
-.row {
-  padding: 2.5rem 0;
-  margin-bottom: 1px solid;
-  border-bottom: 1px solid #e3e3e3;
+  .row {
+    padding: 2.5rem 0;
+    margin-bottom: 1px solid;
+    border-bottom: 1px solid #e3e3e3;
+  }
 }

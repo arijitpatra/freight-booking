@@ -5,7 +5,6 @@ import { AdornmentBoxComponent } from "../AdornmentBoxComponent";
 import { TextBoxComponent } from "../TextBoxComponent";
 import { DropDownComponent } from "../DropDownComponent";
 import { cargoTypes, unloadingStops } from "../../utils";
-import "./Cargo.scss";
 
 export const Cargo = () => {
   const [toggle, setToggle] = useState(false);
