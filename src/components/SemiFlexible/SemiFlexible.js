@@ -4,6 +4,7 @@ import { DatePickerComponent } from "../DatePickerComponent";
 import { TimePickerComponent } from "../TimePickerComponent";
 import { EstimatedArrival } from "../EstimatedArrival";
 
+// Scheduling strategy: Semi-flexible
 export const SemiFlexible = ({ index }) => {
   return (
     <>

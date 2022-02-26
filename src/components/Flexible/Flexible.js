@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import { DatePickerComponent } from "../DatePickerComponent";
 import { TimePickerComponent } from "../TimePickerComponent";
 
+// Scheduling strategy: Flexible
 export const Flexible = () => {
   return (
     <Stack spacing={4} direction="row">

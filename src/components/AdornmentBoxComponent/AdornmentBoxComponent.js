@@ -4,6 +4,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import PropTypes from "prop-types";
 
+// Renders a text field with input adornment of MUI
 export const AdornmentBoxComponent = ({
   label,
   adornmentText,

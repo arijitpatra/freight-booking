@@ -3,6 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 import PropTypes from "prop-types";
 
+// Component to render a text field
 export const TextBoxComponent = ({ label, type = "number" }) => {
   const [value, setValue] = useState("");
 

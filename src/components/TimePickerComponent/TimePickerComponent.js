@@ -6,6 +6,7 @@ import { times } from "../../utils";
 import InputAdornment from "@mui/material/InputAdornment";
 import PropTypes from "prop-types";
 
+// This is a common TimePickerComponent component which can handle both From and To times
 export const TimePickerComponent = ({ label }) => {
   const [value, setValue] = useState("");
 

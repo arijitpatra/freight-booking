@@ -87,6 +87,10 @@ export const cargoTypes = [
   },
 ];
 
+/* the fn takes in a input which is in the format like - 900 or 1900
+    it first makes the number a string and returns
+    the time in the format like 09:00 or 19:00
+*/
 export const formatTime = (item) => {
   item = item.toString();
   if (item.length === 3) {

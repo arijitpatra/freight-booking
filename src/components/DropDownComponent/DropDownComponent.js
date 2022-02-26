@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import PropTypes from "prop-types";
 
+// Renders a DropDown component
 export const DropDownComponent = ({ label, options }) => {
   const [value, setValue] = useState("");
 

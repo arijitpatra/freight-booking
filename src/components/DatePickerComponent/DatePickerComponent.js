@@ -6,6 +6,7 @@ import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 import PropTypes from "prop-types";
 
+// Component to render a date picker
 export const DatePickerComponent = ({ label }) => {
   const today = new Date();
   const [value, setValue] = useState(null);

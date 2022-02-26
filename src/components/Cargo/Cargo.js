@@ -7,6 +7,7 @@ import { DropDownComponent } from "../DropDownComponent";
 import { cargoTypes, unloadingStops } from "../../utils";
 import "./Cargo.scss";
 
+// Cargo form is defined here
 export const Cargo = () => {
   const [toggle, setToggle] = useState(false);
 

@@ -1,6 +1,7 @@
 import { DatePickerComponent } from "../DatePickerComponent";
 import { EstimatedArrival } from "../EstimatedArrival";
 
+// Scheduling strategy: Fixed
 export const Fixed = ({ index }) => {
   return (
     <>
