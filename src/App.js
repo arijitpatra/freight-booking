@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="d-f a-c j-sb">
+      <div className="d-f a-c j-sb header">
         <h1>Route</h1>
         <section className="d-f a-c">
           <select

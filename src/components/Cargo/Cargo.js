@@ -97,7 +97,7 @@ export const Cargo = () => {
                 <Box
                   sx={{ width: "73%" }}
                   style={{
-                    borderRight: "1px solid #c4c4c4",
+                    borderRight: "1px dotted #c4c4c4",
                     paddingRight: "1rem",
                   }}
                 >
@@ -180,12 +180,17 @@ export const Cargo = () => {
             <Stack
               spacing={2}
               direction="row"
-              style={{ justifyContent: "end", marginTop: "1rem" }}
+              style={{ justifyContent: "end", marginTop: "2rem" }}
             >
-              <Button variant="text" onClick={handleToggle}>
+              <span
+                onClick={handleToggle}
+                className="fw-600 text-gray cursor-pointer fs-18"
+              >
                 Cancel
-              </Button>
-              <Button variant="contained">Save</Button>
+              </span>
+              <span className="fw-600 text-orange underline cursor-pointer fs-18">
+                Save
+              </span>
             </Stack>
             <div></div>
           </>

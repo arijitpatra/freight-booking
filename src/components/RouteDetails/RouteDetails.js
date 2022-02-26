@@ -82,56 +82,36 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                 {schedulingStrategy === "semiFlexible" && (
                   <section className="dateTime">
                     {i === 0 ? (
-                      <Stack
-                        spacing={2}
-                        direction="row"
-                        style={{ justifyContent: "end", marginTop: "1rem" }}
-                      >
-                        <LocalizationProvider dateAdapter={AdapterDateFns}>
-                          <InputLabel id="demo-simple-select-label">
-                            Pick up date
-                          </InputLabel>
-                          <DatePicker
-                            value={value}
-                            onChange={(newValue) => {
-                              setValue(newValue);
-                            }}
-                            renderInput={(params) => <TextField {...params} />}
-                          />
-                          {/* 
-                          <Box sx={{ width: "50ch" }}>
-                            <InputLabel id="demo-simple-select-label">
-                              From
-                            </InputLabel>
-                            <TimePicker
-                              value={value}
-                              onChange={(newValue) => {
-                                setValue(newValue);
-                              }}
-                              renderInput={(params) => (
-                                <TextField {...params} />
-                              )}
-                            />
+                      <>
+                        <Stack
+                          spacing={4}
+                          direction="row"
+                          style={{ justifyContent: "end", marginTop: "1rem" }}
+                        >
+                          <Box sx={{ width: "100%" }}>
+                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                              <InputLabel id="demo-simple-select-label">
+                                Pick up date
+                              </InputLabel>
+                              <DatePicker
+                                inputFormat="dd/MM/yy"
+                                value={value}
+                                onChange={(newValue) => {
+                                  setValue(newValue);
+                                }}
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    style={{ width: "100%" }}
+                                  />
+                                )}
+                              />
+                            </LocalizationProvider>
                           </Box>
 
-                          <Box sx={{ width: "50ch" }}>
+                          <Box sx={{ width: "100%" }}>
                             <InputLabel id="demo-simple-select-label">
-                              To
-                            </InputLabel>
-                            <TimePicker
-                              value={value}
-                              onChange={(newValue) => {
-                                setValue(newValue);
-                              }}
-                              renderInput={(params) => (
-                                <TextField {...params} />
-                              )}
-                            />
-                          </Box> */}
-
-                          <Box sx={{ width: "50ch" }}>
-                            <InputLabel id="demo-simple-select-label">
-                              Unloading stop
+                              From
                             </InputLabel>
                             <Select
                               labelId="demo-simple-select-label"
@@ -146,9 +126,9 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                             </Select>
                           </Box>
 
-                          <Box sx={{ width: "50ch" }}>
+                          <Box sx={{ width: "100%" }}>
                             <InputLabel id="demo-simple-select-label">
-                              Unloading stop
+                              To
                             </InputLabel>
                             <Select
                               labelId="demo-simple-select-label"
@@ -179,8 +159,8 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                           }}
                           renderInput={(params) => <TextField {...params} />}
                         /> */}
-                        </LocalizationProvider>
-                      </Stack>
+                        </Stack>
+                      </>
                     ) : (
                       <div style={{ display: "flex", flexDirection: "column" }}>
                         <div className="text-gray fw-600">
@@ -193,32 +173,66 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                 )}
                 {schedulingStrategy === "flexible" && (
                   <section className="dateTime">
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DatePicker
-                        label={i === 0 ? "Pick up date" : "Arrival date"}
-                        value={value}
-                        onChange={(newValue) => {
-                          setValue(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                      <TimePicker
-                        label="From"
-                        value={value}
-                        onChange={(newValue) => {
-                          setValue(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                      <TimePicker
-                        label="To"
-                        value={value}
-                        onChange={(newValue) => {
-                          setValue(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
+                    <Stack
+                      spacing={4}
+                      direction="row"
+                      style={{ justifyContent: "end", marginTop: "1rem" }}
+                    >
+                      <Box sx={{ width: "100%" }}>
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <InputLabel id="demo-simple-select-label">
+                            Pick up date
+                          </InputLabel>
+                          <DatePicker
+                            inputFormat="dd/MM/yy"
+                            value={value}
+                            onChange={(newValue) => {
+                              setValue(newValue);
+                            }}
+                            renderInput={(params) => (
+                              <TextField
+                                {...params}
+                                style={{ width: "100%" }}
+                              />
+                            )}
+                          />
+                        </LocalizationProvider>
+                      </Box>
+
+                      <Box sx={{ width: "100%" }}>
+                        <InputLabel id="demo-simple-select-label">
+                          From
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          onChange={handleChange}
+                          style={{ width: "100%" }}
+                        >
+                          <MenuItem value={10}>10 Miles</MenuItem>
+                          <MenuItem value={20}>20 Miles</MenuItem>
+                          <MenuItem value={30}>30 Miles</MenuItem>
+                        </Select>
+                      </Box>
+
+                      <Box sx={{ width: "100%" }}>
+                        <InputLabel id="demo-simple-select-label">
+                          To
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          onChange={handleChange}
+                          style={{ width: "100%" }}
+                        >
+                          <MenuItem value={10}>10 Miles</MenuItem>
+                          <MenuItem value={20}>20 Miles</MenuItem>
+                          <MenuItem value={30}>30 Miles</MenuItem>
+                        </Select>
+                      </Box>
+                    </Stack>
                   </section>
                 )}
                 <section className="text-orange fw-600 m-t-1r">
