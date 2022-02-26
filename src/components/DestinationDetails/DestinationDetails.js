@@ -2,7 +2,11 @@ import { formatTime } from "../../utils";
 
 export const DestinationDetails = ({ destination }) => {
   return (
-    <section key={destination.company} className="company">
+    <section
+      key={destination.company}
+      className="company"
+      data-testid="destination-details-test"
+    >
       <div className="fw-800 fs-21">{destination.address}</div>
       <div>{destination.company}</div>
       <div>
