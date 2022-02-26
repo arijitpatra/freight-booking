@@ -35,7 +35,7 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                 lastIndex={stops.length - 1}
               />
               <section key={item.company} className="company">
-                <div className="fw-800 fs-18">{item.address}</div>
+                <div className="fw-800 fs-21">{item.address}</div>
                 <div>{item.company}</div>
                 <div>
                   <span class="text-gray fw-600">Opening Hours: </span>{" "}

@@ -34,7 +34,7 @@ export const Cargo = () => {
         )}
         {toggle && (
           <>
-            <h4>Cargo item</h4>
+            <h3>Cargo item</h3>
             <Stack spacing={4}>
               <Stack spacing={4} direction="row">
                 <Box sx={{ width: "100%" }}>
