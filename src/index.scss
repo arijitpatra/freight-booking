@@ -97,3 +97,17 @@ code {
 .MuiOutlinedInput-root:hover fieldset {
   border-color: $orange !important;
 }
+
+.MuiInputAdornment-positionStart p {
+  @extend .fw-600;
+  color: $gray;
+}
+
+.MuiInputBase-input {
+  @extend .fw-600;
+  color: $black !important;
+}
+
+.v-hidden {
+  visibility: hidden;
+}

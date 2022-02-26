@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { DatePickerComponent } from "../DatePickerComponent";
-import { FromTime } from "../FromTime";
-import { ToTime } from "../ToTime";
+import { TimePickerComponent } from "../TimePickerComponent";
 
 export const Flexible = () => {
   return (
@@ -17,11 +16,11 @@ export const Flexible = () => {
         </Box>
 
         <Box sx={{ width: "100%" }}>
-          <FromTime />
+          <TimePickerComponent label="From" />
         </Box>
 
         <Box sx={{ width: "100%" }}>
-          <ToTime />
+          <TimePickerComponent label="To" />
         </Box>
       </Stack>
     </section>

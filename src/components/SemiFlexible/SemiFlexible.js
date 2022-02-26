@@ -1,8 +1,7 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { DatePickerComponent } from "../DatePickerComponent";
-import { FromTime } from "../FromTime";
-import { ToTime } from "../ToTime";
+import { TimePickerComponent } from "../TimePickerComponent";
 import { EstimatedArrival } from "../EstimatedArrival";
 
 export const SemiFlexible = ({ index }) => {
@@ -20,11 +19,11 @@ export const SemiFlexible = ({ index }) => {
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <FromTime />
+              <TimePickerComponent label="From" />
             </Box>
 
             <Box sx={{ width: "100%" }}>
-              <ToTime />
+              <TimePickerComponent label="To" />
             </Box>
           </Stack>
         </>
