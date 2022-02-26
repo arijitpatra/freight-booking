@@ -1,6 +1,4 @@
-$orange: #e74c03;
-$black: #31393f;
-$gray: #9d9d9d;
+@import "./styles/variables.scss";
 
 body {
   margin: 0;
@@ -66,11 +64,6 @@ code {
   margin-left: 65px;
 }
 
-.MuiInputLabel-root {
-  @extend .fw-600;
-  @extend .fs-12;
-}
-
 .w-100 {
   width: 100%;
 }
@@ -104,6 +97,11 @@ code {
   text-underline-offset: 5px;
 }
 
+.v-hidden {
+  visibility: hidden;
+}
+
+// MUI Overrides --- starts
 .Mui-focused {
   fieldset {
     border-color: $orange !important;
@@ -124,6 +122,8 @@ code {
   color: $black !important;
 }
 
-.v-hidden {
-  visibility: hidden;
+.MuiInputLabel-root {
+  @extend .fw-600;
+  @extend .fs-12;
 }
+// MUI Overrides --- ends
