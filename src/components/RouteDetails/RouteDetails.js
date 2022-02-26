@@ -235,9 +235,9 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                     </Stack>
                   </section>
                 )}
-                <section className="text-orange fw-600 m-t-1r">
+                <h4 className="text-orange m-t-1r cursor-not-allowed">
                   + <span className="underline">Gate Reference</span>
-                </section>
+                </h4>
               </div>
             </div>
             <div>{canAddCargo && <Cargo />}</div>

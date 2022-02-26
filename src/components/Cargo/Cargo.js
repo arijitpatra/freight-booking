@@ -188,7 +188,7 @@ export const Cargo = () => {
               >
                 Cancel
               </span>
-              <span className="fw-600 text-orange underline cursor-pointer fs-18">
+              <span className="fw-600 text-orange underline cursor-not-allowed fs-18">
                 Save
               </span>
             </Stack>
