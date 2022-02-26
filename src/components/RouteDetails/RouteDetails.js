@@ -13,7 +13,7 @@ const Flexible = lazy(() => import("../Flexible"));
 
 export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   return (
-    <div className="route-details">
+    <div className="RouteDetails">
       {stops.map((item, i) => {
         return (
           <div className="row" key={item.company + "row"}>
