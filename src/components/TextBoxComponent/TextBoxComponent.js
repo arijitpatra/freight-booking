@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
+import PropTypes from "prop-types";
 
 export const TextBoxComponent = ({ label, type = "number" }) => {
   const [value, setValue] = useState("");
@@ -22,4 +23,9 @@ export const TextBoxComponent = ({ label, type = "number" }) => {
       />
     </>
   );
+};
+
+TextBoxComponent.propTypes = {
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };

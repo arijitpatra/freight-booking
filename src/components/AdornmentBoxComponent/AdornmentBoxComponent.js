@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import InputAdornment from "@mui/material/InputAdornment";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import PropTypes from "prop-types";
 
 export const AdornmentBoxComponent = ({
   label,
@@ -33,4 +34,10 @@ export const AdornmentBoxComponent = ({
       />
     </>
   );
+};
+
+AdornmentBoxComponent.propTypes = {
+  adornmentText: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };

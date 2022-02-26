@@ -17,7 +17,7 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
       {stops.map((item, i) => {
         return (
           <div className="row" key={item.company + "row"}>
-            <div className="routes">
+            <div className="location">
               <LocationMarker
                 key={`lm-${item.company}`}
                 index={i}
@@ -26,15 +26,17 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
 
               <DestinationDetails destination={item} />
 
-              <div className="right">
+              <div className="date-time">
                 <Suspense fallback={<CircularProgress color="inherit" />}>
-                  {schedulingStrategy === "fixed" && <Fixed index={i} />}
+                  <section>
+                    {schedulingStrategy === "fixed" && <Fixed index={i} />}
 
-                  {schedulingStrategy === "semiFlexible" && (
-                    <SemiFlexible index={i} />
-                  )}
+                    {schedulingStrategy === "semiFlexible" && (
+                      <SemiFlexible index={i} />
+                    )}
 
-                  {schedulingStrategy === "flexible" && <Flexible />}
+                    {schedulingStrategy === "flexible" && <Flexible />}
+                  </section>
                 </Suspense>
 
                 <h4 className="text-orange m-t-1r cursor-not-allowed">

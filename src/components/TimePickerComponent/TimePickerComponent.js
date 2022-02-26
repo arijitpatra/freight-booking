@@ -4,24 +4,24 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { times } from "../../utils";
 import InputAdornment from "@mui/material/InputAdornment";
+import PropTypes from "prop-types";
 
 export const TimePickerComponent = ({ label }) => {
-  const [time, setTime] = useState("");
+  const [value, setValue] = useState("");
 
-  const handleTimeChange = (event) => {
-    setTime(event.target.value);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
   return (
     <>
-      <InputLabel id="demo-simple-select-label" className="v-hidden">
+      <InputLabel id={`${label}-label`} className="v-hidden">
         {label}
       </InputLabel>
       <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value={time}
-        onChange={handleTimeChange}
+        id={label}
+        value={value}
+        onChange={handleChange}
         className="w-100"
         startAdornment={
           <InputAdornment position="start">{label}</InputAdornment>
@@ -35,4 +35,8 @@ export const TimePickerComponent = ({ label }) => {
       </Select>
     </>
   );
+};
+
+TimePickerComponent.propTypes = {
+  label: PropTypes.string.isRequired,
 };

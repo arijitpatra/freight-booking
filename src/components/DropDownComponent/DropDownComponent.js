@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import PropTypes from "prop-types";
 
 export const DropDownComponent = ({ label, options }) => {
   const [value, setValue] = useState("");
@@ -28,4 +29,14 @@ export const DropDownComponent = ({ label, options }) => {
       </Select>
     </>
   );
+};
+
+DropDownComponent.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  label: PropTypes.string.isRequired,
 };

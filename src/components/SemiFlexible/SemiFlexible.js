@@ -6,7 +6,7 @@ import { EstimatedArrival } from "../EstimatedArrival";
 
 export const SemiFlexible = ({ index }) => {
   return (
-    <section className="dateTime">
+    <>
       {index === 0 ? (
         <>
           <Stack spacing={4} direction="row">
@@ -26,6 +26,6 @@ export const SemiFlexible = ({ index }) => {
       ) : (
         <EstimatedArrival />
       )}
-    </section>
+    </>
   );
 };

@@ -4,6 +4,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
+import PropTypes from "prop-types";
 
 export const DatePickerComponent = ({ label }) => {
   const today = new Date();
@@ -29,4 +30,8 @@ export const DatePickerComponent = ({ label }) => {
       </LocalizationProvider>
     </>
   );
+};
+
+DatePickerComponent.propTypes = {
+  label: PropTypes.string.isRequired,
 };
