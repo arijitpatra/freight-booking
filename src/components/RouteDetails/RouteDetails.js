@@ -12,10 +12,10 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
     <>
       {stops.map((item, i) => {
         return (
-          <div className="row">
+          <div className="row" key={item.company + "row"}>
             <div className="routes">
               <LocationMarker
-                key={item}
+                key={`lm-${item.company}`}
                 index={i}
                 lastIndex={stops.length - 1}
               />

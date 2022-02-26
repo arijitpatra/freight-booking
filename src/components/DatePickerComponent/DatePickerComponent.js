@@ -18,6 +18,7 @@ export const DatePickerComponent = () => {
         <DatePicker
           id="pick-up-date"
           inputFormat="dd/MM/yy"
+          mask="__/__/__"
           value={pickUpDate}
           onChange={(data) => handlePickUpDateChange(data)}
           renderInput={(params) => <TextField {...params} className="w-100" />}
