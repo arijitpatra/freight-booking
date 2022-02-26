@@ -1,25 +1,6 @@
-@import "./index.scss";
-
-.text-orange {
-  color: $orange;
-}
-
-.text-gray {
-  color: $gray;
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.fw-600 {
-  font-weight: 600;
-}
-
-.fw-800 {
-  font-weight: 800;
-}
-
-.fs-18 {
-  font-size: 18px;
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 999999999;
 }

@@ -17,3 +17,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.text-orange {
+  color: $orange;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.m-t-1r {
+  margin-top: 1rem;
+}
+
+.MuiInputLabel-root {
+  @extend .fw-600;
+  @extend .fs-12;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-f {
+  display: flex;
+}
+
+.j-c {
+  justify-content: center;
+}
+
+.a-c {
+  align-items: center;
+}
+
+.j-sb {
+  justify-content: space-between;
+}
+
+.underline {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}

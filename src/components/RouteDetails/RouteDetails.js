@@ -50,20 +50,30 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                 {schedulingStrategy === "fixed" && (
                   <section className="dateTime">
                     {i === 0 ? (
-                      <LocalizationProvider dateAdapter={AdapterDateFns}>
-                        <DatePicker
-                          label="Pick up date"
-                          value={value}
-                          onChange={(newValue) => {
-                            setValue(newValue);
-                          }}
-                          renderInput={(params) => <TextField {...params} />}
-                        />
-                      </LocalizationProvider>
+                      // <Box sx={{ width: "50ch" }}>
+                      <>
+                        <InputLabel id="demo-simple-select-label12321">
+                          Pick up date
+                        </InputLabel>
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <DatePicker
+                            inputFormat="dd/MM/yy"
+                            value={value}
+                            onChange={(newValue) => {
+                              setValue(newValue);
+                            }}
+                            renderInput={(params) => (
+                              <TextField {...params} className="w-100" />
+                            )}
+                          />
+                        </LocalizationProvider>
+                      </>
                     ) : (
                       <div style={{ display: "flex", flexDirection: "column" }}>
-                        <div>Estimated Arrival</div>
-                        <div>-</div>
+                        <div className="text-gray fw-600">
+                          Estimated Arrival
+                        </div>
+                        <div className="text-gray fw-600">-</div>
                       </div>
                     )}
                   </section>
@@ -173,8 +183,10 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                       </Stack>
                     ) : (
                       <div style={{ display: "flex", flexDirection: "column" }}>
-                        <div>Estimated Arrival</div>
-                        <div>-</div>
+                        <div className="text-gray fw-600">
+                          Estimated Arrival
+                        </div>
+                        <div className="text-gray fw-600">-</div>
                       </div>
                     )}
                   </section>
@@ -209,8 +221,8 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                     </LocalizationProvider>
                   </section>
                 )}
-                <section className="text-orange fw-600">
-                  +Gate Reference
+                <section className="text-orange fw-600 m-t-1r">
+                  + <span className="underline">Gate Reference</span>
                 </section>
               </div>
             </div>

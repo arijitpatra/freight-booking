@@ -1,8 +1,10 @@
+@import "../../index.scss";
+
 .locationMarker {
   width: 35px;
   height: 35px;
   border-radius: 50% 50% 50% 0;
-  background: #89849b;
+  background: $gray;
   transform: rotate(-45deg);
   margin: 1rem;
   display: flex;
