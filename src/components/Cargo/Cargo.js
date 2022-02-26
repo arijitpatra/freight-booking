@@ -11,13 +11,49 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormHelperText from "@mui/material/FormHelperText";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import "./Cargo.scss";
+import { type } from "@testing-library/user-event/dist/type";
 
 export const Cargo = () => {
   const [toggle, setToggle] = useState(false);
-  const [age, setAge] = useState("");
+  const [unloadingStop, setUnloadingStop] = useState("");
+  const [type, setType] = useState("");
+  const [poNumber, setPoNumber] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [totalWeight, setTotalWeight] = useState("");
+  const [length, setLength] = useState("");
+  const [width, setWidth] = useState("");
+  const [height, setHeight] = useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleUnloadingStopChange = (event) => {
+    setUnloadingStop(event.target.value);
+  };
+
+  const handleTypeChange = (event) => {
+    setType(event.target.value);
+  };
+
+  const handlePoNumberChange = (event) => {
+    setPoNumber(event.target.value);
+  };
+
+  const handleQuantityChange = (event) => {
+    setQuantity(event.target.value);
+  };
+
+  const handleTotalWeightChange = (event) => {
+    setTotalWeight(event.target.value);
+  };
+
+  const handleLengthChange = (event) => {
+    setLength(event.target.value);
+  };
+
+  const handleWidthChange = (event) => {
+    setWidth(event.target.value);
+  };
+
+  const handleHeightChange = (event) => {
+    setHeight(event.target.value);
   };
 
   const handleToggle = () => {
@@ -38,15 +74,15 @@ export const Cargo = () => {
             <Stack spacing={4}>
               <Stack spacing={4} direction="row">
                 <Box sx={{ width: "100%" }}>
-                  <InputLabel id="demo-simple-select-label">
+                  <InputLabel id="unloading-stop-label">
                     Unloading stop
                   </InputLabel>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    onChange={handleChange}
+                    id="unloading-stop"
+                    value={unloadingStop}
+                    onChange={handleUnloadingStopChange}
                     style={{ width: "100%" }}
+                    placeholder="Please select an option"
                   >
                     <MenuItem value={10}>10 Miles</MenuItem>
                     <MenuItem value={20}>20 Miles</MenuItem>
@@ -55,42 +91,41 @@ export const Cargo = () => {
                 </Box>
 
                 <Box sx={{ width: "100%" }}>
-                  <InputLabel id="demo-simple-select-label2">Type</InputLabel>
+                  <InputLabel id="type-label">Type</InputLabel>
                   <Select
-                    labelId="demo-simple-select-label2"
-                    id="demo-simple-select2"
-                    value={age}
-                    onChange={handleChange}
+                    id="type"
+                    value={type}
+                    onChange={handleTypeChange}
                     style={{ width: "100%" }}
+                    placeholder="Please select an option"
                   >
-                    <MenuItem value={10}>10 Miles</MenuItem>
-                    <MenuItem value={20}>20 Miles</MenuItem>
-                    <MenuItem value={30}>30 Miles</MenuItem>
+                    <MenuItem value="air">Air Freight</MenuItem>
+                    <MenuItem value="road">Road Freight</MenuItem>
+                    <MenuItem value="sea">Sea Freight</MenuItem>
                   </Select>
                 </Box>
 
                 <Box sx={{ width: "100%" }}>
-                  <InputLabel id="demo-simple-select-label3">
-                    PO Number
-                  </InputLabel>
+                  <InputLabel id="po-number-label">PO Number</InputLabel>
                   <TextField
-                    id="outlined-basic"
+                    val={poNumber}
+                    id="po-number"
                     variant="outlined"
                     style={{ width: "100%" }}
+                    onChange={handlePoNumberChange}
                   />
                 </Box>
               </Stack>
 
               <Stack spacing={4} direction="row">
                 <Box sx={{ width: "73%" }}>
-                  <InputLabel id="demo-simple-select-label3">
-                    Quantity
-                  </InputLabel>
+                  <InputLabel id="quantity-label">Quantity</InputLabel>
                   <TextField
-                    hiddenLabel
-                    id="outlined-basic"
+                    val={quantity}
+                    id="quantity"
                     variant="outlined"
                     style={{ width: "100%" }}
+                    onChange={handleQuantityChange}
                   />
                 </Box>
 
@@ -101,18 +136,15 @@ export const Cargo = () => {
                     paddingRight: "1rem",
                   }}
                 >
-                  <InputLabel id="demo-simple-select-label5">
-                    Total Weight
-                  </InputLabel>
+                  <InputLabel id="total-weight-label">Total Weight</InputLabel>
                   <OutlinedInput
-                    id="outlined-adornment-weight"
-                    value={1}
-                    // onChange={handleChange("weight")}
-                    onChange={() => {}}
+                    val={totalWeight}
+                    id="total-weight"
+                    onChange={handleTotalWeightChange}
                     endAdornment={
                       <InputAdornment position="end">kg</InputAdornment>
                     }
-                    aria-describedby="outlined-weight-helper-text"
+                    aria-describedby="total weight"
                     inputProps={{
                       "aria-label": "weight",
                     }}
@@ -121,16 +153,15 @@ export const Cargo = () => {
                 </Box>
 
                 <Box sx={{ width: "100%", marginLeft: "1rem !important" }}>
-                  <InputLabel id="demo-simple-select-label6">Length</InputLabel>
+                  <InputLabel id="length-label">Length</InputLabel>
                   <OutlinedInput
-                    id="outlined-adornment-length"
-                    value={1}
-                    // onChange={handleChange("weight")}
-                    onChange={() => {}}
+                    id="length"
+                    value={length}
+                    onChange={handleLengthChange}
                     endAdornment={
                       <InputAdornment position="end">cm</InputAdornment>
                     }
-                    aria-describedby="outlined-length-helper-text"
+                    aria-describedby="length"
                     inputProps={{
                       "aria-label": "length",
                     }}
@@ -139,16 +170,15 @@ export const Cargo = () => {
                 </Box>
 
                 <Box sx={{ width: "100%" }}>
-                  <InputLabel id="demo-simple-select-label7">Width</InputLabel>
+                  <InputLabel id="width-label">Width</InputLabel>
                   <OutlinedInput
-                    id="outlined-adornment-width"
-                    value={1}
-                    // onChange={handleChange("weight")}
-                    onChange={() => {}}
+                    id="width"
+                    value={width}
+                    onChange={handleWidthChange}
                     endAdornment={
                       <InputAdornment position="end">cm</InputAdornment>
                     }
-                    aria-describedby="outlined-width-helper-text"
+                    aria-describedby="width"
                     inputProps={{
                       "aria-label": "width",
                     }}
@@ -157,17 +187,15 @@ export const Cargo = () => {
                 </Box>
 
                 <Box sx={{ width: "100%" }}>
-                  <InputLabel id="demo-simple-select-label7">Height</InputLabel>
+                  <InputLabel id="height-label">Height</InputLabel>
                   <OutlinedInput
-                    hiddenLabel
-                    id="outlined-adornment-height"
-                    value={1}
-                    // onChange={handleChange("weight")}
-                    onChange={() => {}}
+                    id="height"
+                    value={height}
+                    onChange={handleHeightChange}
                     endAdornment={
                       <InputAdornment position="end">cm</InputAdornment>
                     }
-                    aria-describedby="outlined-height-helper-text"
+                    aria-describedby="height"
                     inputProps={{
                       "aria-label": "height",
                     }}

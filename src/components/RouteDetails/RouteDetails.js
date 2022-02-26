@@ -13,7 +13,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { Cargo } from "../Cargo";
 import { LocationMarker } from "../LocationMarker";
-import { formatTime } from "../../utils";
+import { formatTime, times } from "../../utils";
 
 export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
   const [value, setValue] = useState(null);
@@ -120,9 +120,11 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                               onChange={handleChange}
                               style={{ width: "100%" }}
                             >
-                              <MenuItem value={10}>10 Miles</MenuItem>
-                              <MenuItem value={20}>20 Miles</MenuItem>
-                              <MenuItem value={30}>30 Miles</MenuItem>
+                              {times.map((item) => (
+                                <MenuItem key={`from-${item}`} value={item}>
+                                  {item}
+                                </MenuItem>
+                              ))}
                             </Select>
                           </Box>
 
@@ -137,9 +139,11 @@ export const RouteDetails = ({ stops, schedulingStrategy, canAddCargo }) => {
                               onChange={handleChange}
                               style={{ width: "100%" }}
                             >
-                              <MenuItem value={10}>10 Miles</MenuItem>
-                              <MenuItem value={20}>20 Miles</MenuItem>
-                              <MenuItem value={30}>30 Miles</MenuItem>
+                              {times.map((item) => (
+                                <MenuItem key={`to-${item}`} value={item}>
+                                  {item}
+                                </MenuItem>
+                              ))}
                             </Select>
                           </Box>
 
